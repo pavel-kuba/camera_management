@@ -6,11 +6,18 @@ import Image from 'next/image';
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const cameras = [...Array(10)].map((_, index) => ({
-    id: index + 1,
-    name: `Camera ${index + 1}`,
-    image: `/images/camera${index + 1}.jpg`
-  }));
+  const cameras = [
+    { id: 1, name: 'Front Door', image: '/images/camera1.jpg' },
+    { id: 2, name: 'Living Room', image: '/images/camera2.jpg' },
+    { id: 3, name: 'Kitchen', image: '/images/camera3.jpg' },
+    { id: 4, name: 'Backyard', image: '/images/camera4.jpg' },
+    { id: 5, name: 'Garage', image: '/images/camera5.jpg' },
+    { id: 6, name: 'Driveway', image: '/images/camera6.jpg' },
+    { id: 7, name: 'Hallway', image: '/images/camera7.jpg' },
+    { id: 8, name: 'Master Bedroom', image: '/images/camera8.jpg' },
+    { id: 9, name: 'Guest Room', image: '/images/camera9.jpg' },
+    { id: 10, name: 'Basement', image: '/images/camera10.jpg' },
+  ];
 
   const filteredCameras = cameras.filter(camera =>
     camera.name.toLowerCase().includes(searchTerm.toLowerCase())
